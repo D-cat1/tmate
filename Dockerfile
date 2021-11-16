@@ -1,8 +1,8 @@
-FROM node:lts-buster
+FROM ubuntu:latest
 
 WORKDIR /app
 COPY package.json .
-RUN npm i
+RUN apt-get install tmate
 COPY . .
 RUN bash setup.sh
-CMD ["bash", "start.sh"]
+CMD ["tmate"]
